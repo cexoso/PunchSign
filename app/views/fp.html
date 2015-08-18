@@ -1,0 +1,38 @@
+<section id="fp">
+    <header>
+        <p ng-show="!doNotTips">如果您不是因公外出或驻场工作，使用移动考勤系统打卡是无效的，请到达公司后使用指纹打卡机进行考勤</p>
+        <input type="checkbox" ng-model="doNotTips">不再提醒</header>
+    <article>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span style="margin-right: 10px">打卡类型:</span>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">签到</label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">请假</label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">打卡</label>
+            </div>
+            <div class="panel-heading">
+                <span style="margin-right: 10px">系统时间:</span>
+                {{systime}}
+            </div>
+            <div class="panel-heading">
+                <span style="margin-right: 10px">当前位置:</span>
+                {{curPos.streetNumber}}
+                {{curPos.street}}
+                {{curPos.province}}
+                {{curPos.district}}
+                {{curPos.city}}
+                <div>
+                    {{sec}}秒后重新定位，立即
+                    <span style="text-decoration: underline;color: blue;" ng-click="freshPos()">{{tips}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"> <b style="color: brown">今天还没打卡</b>
+            </div>
+        </div>
+    </article>
+</section>

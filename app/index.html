@@ -5,18 +5,22 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="normalize.css/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/lib.css">
-    <link rel="icon" href="favicon.ico" type="image/gif" ></head>
+    <link rel="icon" href="favicon.ico" type="image/gif" >
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    </head>
 <body ng-app="paticaApp">
-
     <div ui-view=""></div>
-
     <script src="angular/angular.js"></script>
     <script src="angular-ui-router/release/angular-ui-router.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/indexController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/firstPageController.js"></script>
+    <script src="scripts/controllers/fpController.js"></script>
+    <script src="scripts/controllers/locationService.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7TkAQDaq4qlHtkc88EgMu2Ss"></script>
 </body>
 </html>

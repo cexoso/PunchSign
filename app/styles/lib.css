@@ -1,3 +1,6 @@
+* ,*::before,*::after{
+    box-sizing: border-box;
+}
 .container{
   padding-right: 15px;
   padding-left: 15px;
@@ -19,7 +22,6 @@
     width: 1170px;
   }
 }
-
 .text-center{
     text-align: center;
 }
