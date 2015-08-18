@@ -64,6 +64,7 @@ angular.module('services')
         localStorage.setItem(k,JSON.stringify(v));
     }
     function get(k){
+        return ;
         var v=map[k];
         if(!v){
             var json=localStorage.getItem(k);       
