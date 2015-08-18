@@ -3,15 +3,14 @@
     <article>
         <form class="form">
             <div class="item">
-                <label for="">用户名</label>
-                <input type="text"></div>
+                <label>用户名</label>
+                <input type="text" ng-model="Num"></div>
             <div class="item">
-                <label for="">密码</label>
-                <input type="password"></div>
+                <label>密码</label>
+                <input type="password" ng-model="Password"></div>
         </form>
-
     </article>
     <footer>
-        <button class="btn">登录</button>
+        <button class="btn" ng-click="login()">登录</button>
     </footer>
 </section>

@@ -1,7 +1,7 @@
 <section id="fp">
     <header>
-        <p ng-show="!doNotTips">如果您不是因公外出或驻场工作，使用移动考勤系统打卡是无效的，请到达公司后使用指纹打卡机进行考勤</p>
-        <input type="checkbox" ng-model="doNotTips">不再提醒</header>
+        <p ng-show="!data.topPrompt">如果您不是因公外出或驻场工作，使用移动考勤系统打卡是无效的，请到达公司后使用指纹打卡机进行考勤</p>
+        <input type="checkbox" ng-model="data.topPrompt">不再提醒</header>
     <article>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -32,6 +32,27 @@
         </div>
         <div class="panel panel-default">
             <div class="panel-heading"> <b style="color: brown">今天还没打卡</b>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-show="data.TM_Absenteeism!=0">
+            <div class="panel-heading">本月考勤状态</div>
+            <div class="panel-body" >
+                <div> <b style="color: brown">您共旷工{{data.TM_Absenteeism}}天，请尽快提交情况说明。</b>
+                </div>
+                <div ng-show="data.TM_StatementNoSubmit!=0">
+                    <b style="color: brown">情况说明：</b><span style="text-decoration: underline;color: blue;">未提交{{data.TM_StatementNoSubmit}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-show="data.TM_Absenteeism!=0">
+            <div class="panel-heading">上月考勤状态</div>
+            <div class="panel-body" >
+                <div> <b style="color: brown">您共缺勤{{data.}}天,旷工{{data.TM_Absenteeism}}天，请尽快提交情况说明。</b>
+                </div>
+                <div ng-show="data.TM_StatementNoSubmit!=0">
+                    <b style="color: brown">情况说明：</b><span style="text-decoration: underline;color: blue;">未提交{{data.TM_StatementNoSubmit}}</span>
+                </div>
             </div>
         </div>
     </article>

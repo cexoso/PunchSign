@@ -1,4 +1,16 @@
 angular.module('controller').
-controller('loginController',['$scope',function(s){
-   s.q=123
+controller('loginController',['$scope','$state','localStorageService','$http',function(s,$state,storage,$http){
+   s.login=function(){
+        $http.post('/FrontLogin/Login',{
+            Num:s.Num,
+            Passwd:s.Password
+        }).success(function(data){
+            alert(data)
+            storage.set('Num',s.Num);
+            storage.set('Passwd',s.Password);
+            $state.go('index.firstPage.fp') 
+        }).error(function(error){
+            alert(error)     
+        })
+   }
 }]);

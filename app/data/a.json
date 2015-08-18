@@ -1,3 +1,14 @@
 {
-    "a":123
+    "topPrompt":true,
+    "clockinToday":true,
+    "TM_Late":2,
+    "TM_LeaveEarly":3,
+    "TM_Absenteeism":4,
+    "TM_StatementNoSubmit":2,
+    "TM_StatementNoAudit":12,
+    "LM_Late":2,
+    "LM_LeaveEarly":3,
+    "LM_Absenteeism":4,
+    "LM_StatementNoSubmit":5,
+    "LM_StatementNoAudit":6
 }

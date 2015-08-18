@@ -1,5 +1,5 @@
 angular.module('services')
-.service('locationService',['$http','$q',function($http,$q){
+.service('locationService',['$q',function($q){
     function getPos(){
         var deferred = $q.defer();
         function success(position){//获取地理位置成功函数
@@ -19,6 +19,7 @@ angular.module('services')
            });
         }
         function error(error){//获取地理位置失败函数
+            console.log(error)
             deferred.reject(error.message);
         }
         var opt={//获取地理位置选项
@@ -28,7 +29,9 @@ angular.module('services')
         }
         try{
             navigator.geolocation.getCurrentPosition(success,error,opt);
+            console.log("navigator.geolocation.getCurrentPosition(success,error,opt);")
         }catch(e){
+            console.log(e)
             deferred.reject(e);   
         }
         return deferred.promise;
@@ -51,5 +54,28 @@ angular.module('services')
     return {
         getPos:getPos,
         getCNpos:getCNpos
+    }
+}]);
+angular.module('services')
+.service('localStorageService',[function(){
+    var map={}
+    function set(k,v){
+        map[k]=v;
+        localStorage.setItem(k,JSON.stringify(v));
+    }
+    function get(k){
+        var v=map[k];
+        if(!v){
+            var json=localStorage.getItem(k);       
+            v=JSON.parse(json);
+            map[k]=v;
+            return v;
+        }else{
+            return v;
+        }
+    }
+    return{
+        set:set,
+        get:get
     }
 }]);

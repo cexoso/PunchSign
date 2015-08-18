@@ -1,16 +1,16 @@
 angular.module('controller').
 controller('fpController',['$scope','locationService','$interval','data',function(s,l,$interval,data){
    console.log(data)
-   s.doNotTips=false;
+   s.data=data;
    s.systime=new Date();
    s.curPos;
    s.tips="刷新";
    s.freshPos=(function(){
         var refreshing=false;//防止暴力请求
         return function(){
-            if(refreshing){
-                return;
-            }
+            // if(refreshing){
+            //     return;
+            // }
             s.tips="正在刷新";
             refreshing=true;
             l.getCNpos().then(function(e){

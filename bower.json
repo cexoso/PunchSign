@@ -8,8 +8,7 @@
     "angular-resource": "^1.3.0",
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
-    "angular-ui-router": "angular-ui/ui-router#~0.2.15",
-    "normalize.css": "~3.0.3"
+    "angular-ui-router": "angular-ui/ui-router#~0.2.15"
   },
   "devDependencies": {},
   "appPath": "app",
